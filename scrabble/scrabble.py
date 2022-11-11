@@ -3,6 +3,17 @@ import random
 
 ENGLISH_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+letter_dict = dict.fromkeys(['E', 'A', 'I', 'O', 'N', 'R', 'T', 'L', 'S', 'U'], 1)
+letter_dict.update(dict.fromkeys(['D', 'G'], 2 ))
+letter_dict.update(dict.fromkeys(['B', 'C', 'M', 'P'], 3))
+letter_dict.update(dict.fromkeys(['F', 'H', 'V', 'W', 'Y' ], 4))
+letter_dict.update(dict.fromkeys(['K'], 5))
+letter_dict.update(dict.fromkeys(['J', 'X'], 8))
+letter_dict.update(dict.fromkeys(['Q', 'Z'], 10))
+
+
+print(letter_dict)
+
 def open_dictionary(file):
     with open(file) as f:
         lines = f.readlines()
@@ -14,13 +25,6 @@ def letter_points(word):
     #using the chars we are able to match them to points and create a sum total for the word
     # 
      
-    letter_dict = dict.fromkeys(['E', 'A', 'I', 'O', 'N', 'R', 'T', 'L', 'S', 'U'], 1)
-    letter_dict.update(dict.fromkeys(['D', 'G'], 2 ))
-    letter_dict.update(dict.fromkeys(['B', 'C', 'M', 'P'], 3))
-    letter_dict.update(dict.fromkeys(['F', 'H', 'V', 'W', 'Y' ], 4))
-    letter_dict.update(dict.fromkeys(['K'], 5))
-    letter_dict.update(dict.fromkeys(['J', 'X'], 8))
-    letter_dict.update(dict.fromkeys(['Q', 'Z'], 10))
 
     points = 0
     for i in word:
